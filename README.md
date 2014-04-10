@@ -1,19 +1,19 @@
 CSS Best Practices
 ===========
 
-####  Philosophy
+1. Philosophy
 The style guide is designed to help you make better long term coding decisions. This guide will help you write code that can be ea
 
-####  Discoverable
+1. Discoverable
 Being able to quickly and easily determine where code is being used on a page and vicaversa is Good Coding. 
 
-####  Modular
+1. Modular
 Being able to change code in one place and not have it break other code is Good Coding.
 
-####  Refactorable
+1. Refactorable
 
 * * *
-####  Don't use #ids. Use class, tag and universal rules only.
+1. Don't use #ids. Use class, tag and universal rules only.
 
 *Bad*
 ```css
@@ -33,7 +33,7 @@ footer:after
 ## IDs are for JavaScript
 ## Unique class names are good
 
-####  Use '-' hyphens. Not camelCase or under_score to name classes.
+1. Use '-' hyphens. Not camelCase or under_score to name classes.
 
 *Bad*
 ```css
@@ -46,7 +46,7 @@ footer:after
 .home-page-box
 ```
 
-####  Don't nest identifiers more than 3 layers deep.
+1. Don't nest identifiers more than 3 layers deep.
 
 *Bad*
 ```css
@@ -65,7 +65,7 @@ footer:after
 .special-class
 ```
 
-####  Nest as little as possible. Don't use nestings for location finding. Use notes for location.
+1. Nest as little as possible. Don't use nestings for location finding. Use notes for location.
 
 *Pretty Good
 ```css
@@ -85,15 +85,15 @@ footer:after
 
 1.
 
-####  Don't use !important;
+1. Don't use !important;
 
 *!important; is used for testing and quick changes NOT production.
 
-#### AVOID using z-index.
+1.AVOID using z-index.
 
 *Refactor and Write better HTML before thinking you need z-index
 
-#### Only use the following z-index numbers, after you've refactored your HTML:
+1.Only use the following z-index numbers, after you've refactored your HTML:
 
 *Good*
 ```css
@@ -109,7 +109,7 @@ footer:after
 ```
 
 
-#### Make note of CSS dependant code (avoid it when possible.). Use inherit.
+1.Make note of CSS dependant code (avoid it when possible.). Use inherit.
 
 *Bad*
 ```css
@@ -129,7 +129,7 @@ width: 200px;
 
 ```
 
-#### Don't repeat code. If you refactor and check new code against previously written code before
+1.Don't repeat code. If you refactor and check new code against previously written code before
 
 *Bad*
 ```css
@@ -156,7 +156,7 @@ line-height: 1.2em;
 }
 ```
 
-#### Always comment major code break sections.
+1.Always comment major code break sections.
 
 ```css
 /***** Header Start *****/
@@ -168,7 +168,7 @@ line-height: 1.2em;
 /***** Footer End *****/
 ```
 
-#### Don't use negative margins.
+1.Don't use negative margins.
 
 *Bad*
 ```css 
@@ -186,7 +186,7 @@ line-height: 1em;
 }
 ```
 
-#### Don't put values on 0.
+1.Don't put values on 0.
 
 *Bad*
 ```css 
@@ -202,7 +202,7 @@ margin-top: 0;
 }
 ```
 
-#### Separate your CSS files into logical, modular files.
+1.Separate your CSS files into logical, modular files.
 
 *Good*
 ```css
