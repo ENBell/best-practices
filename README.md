@@ -33,7 +33,7 @@ footer:after
 > IDs are for JavaScript :)
 > Unique class names are good Practice
 
-####  1. Use '-' hyphens. Not camelCase or under_score to name classes.
+####  2. Use '-' hyphens. Not camelCase or under_score to name classes.
 
 *Bad Practice*
 ```css
@@ -46,7 +46,7 @@ footer:after
 .home-page-box
 ```
 
-####  Don't nest identifiers more than 3 layers deep.
+####  3. Don't nest identifiers more than 3 layers deep.
 
 *Bad Practice*
 ```css
@@ -69,7 +69,7 @@ footer:after
 }
 ```
 
-####  Nest as little as possible. Don't use nestings for location finding. Use notes for location.
+####  4. Nest as little as possible. Don't use nestings for location finding. Use notes for location.
 
 *Pretty Good Practice
 ```css
@@ -89,7 +89,7 @@ footer:after
 
 1.
 
-####  Don't use !important;
+####  5. Don't use !important;
 
 *!important; is used for testing and quick changes NOT production.
 
@@ -113,7 +113,7 @@ footer:after
 ```
 
 
-#### Make note of CSS dependant code (avoid it when possible.). Use inherit.
+#### 6. Make note of CSS dependant code (avoid it when possible.). Use inherit.
 
 *Bad Practice*
 ```css
@@ -133,7 +133,7 @@ footer:after
 
 ```
 
-#### Don't repeat code. If you refactor and check new code against previously written code before
+#### 7. Don't repeat code. If you refactor and check new code against previously written code before
 
 *Bad Practice*
 ```css
@@ -160,7 +160,7 @@ line 45 .large-bold-text {
 }
 ```
 
-#### Always comment major code break sections.
+#### 8. Always comment major code break sections.
 
 ```css
 /***** Header Start *****/
@@ -172,7 +172,7 @@ line 45 .large-bold-text {
 /***** Footer End *****/
 ```
 
-#### Don't use negative margins.
+#### 9. Don't use negative margins.
 
 *Bad Practice*
 ```css 
@@ -190,7 +190,7 @@ line 45 .large-bold-text {
 }
 ```
 
-#### Don't put values on 0.
+#### 10. Don't put values on 0.
 
 *Bad Practice*
 ```css 
@@ -206,7 +206,7 @@ line 45 .large-bold-text {
 }
 ```
 
-#### Separate your CSS files into logical, modular files.
+#### 11. Separate your CSS files into logical, modular files.
 
 *Good Practice*
 >Separating your homepage css (home-page.css) from your global css (global.css).
