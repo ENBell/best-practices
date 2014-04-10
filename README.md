@@ -19,15 +19,15 @@ CSS Rules
 
 *Bad Practice*
 ```css
-#home-page-nav
-footer#home-page
+#homepage-nav {}
+footer#home-page {}
 ```
 
 *Good Practice*
 ```css
-.home-page-nav
-footer:after
-[hidden="true"]
+.homepage-nav {}
+footer:after {}
+[hidden="true"] {}
 ```
 
 > IDs are for JavaScript :)
@@ -44,7 +44,7 @@ footer:after
 
 *Good Practice*
 ```css
-.home-page-box
+.homepage-box
 ```
 
 ####  3. Don't nest identifiers more than 3 layers deep.
@@ -65,6 +65,7 @@ footer:after
 
 *Best Practice*
 ```css
+/* Used in the .header .nav section */
 .special-class {
 	...
 }
@@ -87,7 +88,7 @@ footer:after
 
 *Best Practice*
 ```css
-/* .header .nav */
+/* Used in the .header .nav section */
 .special-class {}
 ```
 
@@ -104,7 +105,7 @@ footer:after
 
 > __!important;__ is used for testing and quick changes NOT production.
 
-> AVOID using z-index.
+#### 6. AVOID using z-index.
 
 > Refactor and write better HTML before thinking you need z-index
 
@@ -125,7 +126,7 @@ footer:after
 > Use good HTML practices to avoid having to use z-index. HTML tags that are 1) nested and 2) written later in the document will be placed on top of previous HTML tags. By writing better HTML you can avoid z-index.
 > z-indexes often create a chain of coding-to-fix-code when you add new elements and refactor old elements. z-index: 9999; is bad code. 
 
-#### 6. Make note of CSS dependant code (avoid it when possible.). Use inherit.
+#### 7. Make note of CSS dependant code (avoid it when possible.). Use inherit.
 
 *Bad Practice*
 ```css
@@ -154,7 +155,7 @@ footer:after
 
 > Learning to use __inherit__ will help you significantly.
 
-#### 7. Don't repeat code.
+#### 8. Don't repeat code.
 
 *Bad Practice*
 ```css
@@ -183,7 +184,7 @@ line 45 .large-bold-text {
 
 > If you refactor and check new code against previously written code before you will find that often the code has already been written.
 
-#### 8. Always comment major code break sections & be consistent.
+#### 9. Always comment major code break sections & be consistent.
 
 ```css
 /***** Header Start *****/
@@ -195,7 +196,7 @@ line 45 .large-bold-text {
 /***** Footer End   *****/
 ```
 
-#### 9. Don't use negative margins.
+#### 10. Don't use negative margins.
 
 *Bad Practice*
 ```css 
@@ -213,7 +214,7 @@ line 45 .large-bold-text {
 }
 ```
 
-#### 10. Don't put values on 0.
+#### 11. Don't put values on 0.
 
 *Bad Practice*
 ```css 
@@ -229,7 +230,7 @@ line 45 .large-bold-text {
 }
 ```
 
-#### 11. Understand naming conventions & use them wisely.
+#### 12. Understand naming conventions & use them wisely.
 
 *Attribute Names*
 ```css 
@@ -297,7 +298,7 @@ line 45 .large-bold-text {
 }
 ```
 
-#### 12. Separate your CSS files into logical, modular files.
+#### 13. Separate your CSS files into logical, modular files.
 
 *Good Practice*
 > Separating your homepage css (home-page.css) from your global css (global.css).
