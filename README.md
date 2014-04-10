@@ -31,9 +31,10 @@ footer:after
 ```
 
 > IDs are for JavaScript :)
+
 > Unique class names are good Practice
 
-####  2. Use '-' hyphens. Not camelCase or under_score to name classes.
+####  2. Use '-' hyphens for class names. Don't use camelCase or under_score.
 
 *Bad Practice*
 ```css
@@ -69,7 +70,9 @@ footer:after
 }
 ```
 
-####  4. Nest as little as possible. Don't use nestings for location finding. Use notes for location.
+####  4. Nest as little as possible. 
+
+> Don't use nestings for location finding. Use notes for location.
 
 *Pretty Good Practice
 ```css
@@ -78,6 +81,7 @@ footer:after
 
 *Better
 ```css
+/* .header */
 .nav .special-class {}
 ```
 
@@ -91,15 +95,22 @@ footer:after
 
 ####  5. Don't use !important;
 
-*!important; is used for testing and quick changes NOT production.
+*Bad*
+```css
+.phone-call-popup {
+	color: red !important;
+}
+```
 
-#### AVOID using z-index.
+> __!important;__ is used for testing and quick changes NOT production.
 
-*Refactor and Write better HTML before thinking you need z-index
+> AVOID using z-index.
 
-#### Only use the following z-index numbers, after you've refactored your HTML:
+> Refactor and write better HTML before thinking you need z-index
 
-*Good Practice*
+#### Only use the following three z-index numbers, after you've refactored your HTML:
+
+*Rarely Acceptable Practice*
 ```css
 	.rare-class {
 	  z-index: 100;
@@ -111,29 +122,39 @@ footer:after
   	z-index: 300;
   }
 ```
-
+> Use good HTML practices to avoid having to use z-index. HTML tags that are 1) nested and 2) written later in the document will be placed on top of previous HTML tags. By writing better HTML you can avoid z-index.
+> z-indexes often create a chain of coding-to-fix-code when you add new elements and refactor old elements. z-index: 9999; is bad code. 
 
 #### 6. Make note of CSS dependant code (avoid it when possible.). Use inherit.
 
 *Bad Practice*
 ```css
 .parent-box {
-  width: 100px;
+  font-size: 14px;
 }
 .parent-box .left-side {
-  width: 200px;
+  font-size: inherit;
 }
 .parent-box .right-side {
-
+	font-size: 16px;
 }
 ```
 
 *Good Practice*
-```css
+.parent-box {
+  font-size: 14px;
+}
+/* .left-side font-size should always match the parent box
+.parent-box .left-side {
+  font-size: inherit;
+}
+.parent-box .right-side {
+	font-size: 16px;
+}
 
-```
+> Learning to use __inherit__ will help you significantly.
 
-#### 7. Don't repeat code. If you refactor and check new code against previously written code before
+#### 7. Don't repeat code.
 
 *Bad Practice*
 ```css
@@ -160,16 +181,18 @@ line 45 .large-bold-text {
 }
 ```
 
-#### 8. Always comment major code break sections.
+> If you refactor and check new code against previously written code before you will find that often the code has already been written.
+
+#### 8. Always comment major code break sections & be consistent.
 
 ```css
 /***** Header Start *****/
 	...
-/***** Header End *****/
+/***** Header End   *****/
 
 /***** Footer Start *****/
 	...
-/***** Footer End *****/
+/***** Footer End   *****/
 ```
 
 #### 9. Don't use negative margins.
@@ -209,12 +232,12 @@ line 45 .large-bold-text {
 #### 11. Separate your CSS files into logical, modular files.
 
 *Good Practice*
->Separating your homepage css (home-page.css) from your global css (global.css).
->Creating a separate file for forms (forms.css).
->Modular files mean the file can work well independently. Files should have no more than one depency files (global.css).
+> Separating your homepage css (home-page.css) from your global css (global.css).
+> Creating a separate file for forms (forms.css).
+> Modular files mean the file can work well independently. Files should have no more than one depency files (global.css).
 
 *Bad Practice*
->Duplicating css in different files. 
->If you find repeated code in different files.
+> Duplicating css in different files. 
+> If you find repeated code in different files.
 
 
