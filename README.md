@@ -16,12 +16,14 @@ Being able to change code in one place and not have it break other code is Good 
 1.  Don't use #ids. Use class, tag and universal rules only.
 
 *Bad*
+
 '''html
 #home-page-nav
 footer#home-page
 '''
 
 *Good*
+
 '''css
 .home-page-nav
 footer:after
