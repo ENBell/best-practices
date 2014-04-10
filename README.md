@@ -17,7 +17,7 @@ Being able to change code in one place and not have it break other code is Good 
 
 *Bad*
 
-'''html
+'''javascript
 #home-page-nav
 footer#home-page
 '''
