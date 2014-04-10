@@ -17,18 +17,18 @@ Being able to change code in one place and not have it break other code is Good 
 
 *Bad*
 
-'''javascript
+```css
 #home-page-nav
 footer#home-page
-'''
+```
 
 *Good*
 
-'''css
+```css
 .home-page-nav
 footer:after
 [hidden="true"]
-'''
+```
 
 ## IDs are for JavaScript
 ## Unique class names are good
