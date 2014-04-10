@@ -1,20 +1,23 @@
-Vivint CSS & HTML Standards
+CSS Best Practices
 ===========
 
 Philosophy
 ----------
 The style guide is designed to help you make better long term coding decisions. This guide will help you write code that can be ea
 
-#Discoverable
+Discoverable
+----------
 Being able to quickly and easily determine where code is being used on a page and vicaversa is Good Coding. 
 
-#Modular
+Modular
+----------
 Being able to change code in one place and not have it break other code is Good Coding.
 
-#Refactorable
+Refactorable
+----------
 
 
-1. Don't use #ids. Use class, tag and universal rules only.
+1.  Don't use #ids. Use class, tag and universal rules only.
 
 ### Bad
 	#home-page-nav
@@ -28,7 +31,7 @@ Being able to change code in one place and not have it break other code is Good 
 ## IDs are for JavaScript
 ## Unique class names are good	
 
-1. Use '-' hyphens. Not camelCase or under_score to name classes.
+1.  Use '-' hyphens. Not camelCase or under_score to name classes.
 
 ### Bad
 	.homePageBox
@@ -37,7 +40,7 @@ Being able to change code in one place and not have it break other code is Good 
 ### Good
 	.home-page-box
 
-1. Don't nest identifiers more than 3 layers deep.
+1.  Don't nest identifiers more than 3 layers deep.
 
 ### Bad
 	.header .nav ul li .special-class {}
@@ -48,7 +51,7 @@ Being able to change code in one place and not have it break other code is Good 
 ### Best
 	.special-class	
 
-1. Nest as little as possible. Don't use nestings for location finding. Use notes for location.
+1.  Nest as little as possible. Don't use nestings for location finding. Use notes for location.
 
 ### Pretty Good
 	.header .nav .special-class
@@ -62,7 +65,7 @@ Being able to change code in one place and not have it break other code is Good 
 
 1.		
 
-1. Don't use !important;
+1.  Don't use !important;
 
 ### !important; is used for testing and quick changes NOT production.
 
