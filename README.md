@@ -16,8 +16,8 @@ Being able to change code in one place and not have it break other code is Good 
 1.  Don't use #ids. Use class, tag and universal rules only.
 
 *Bad*
-	'#home-page-nav
-	footer#home-page'
+	'#home-page-nav'
+	'footer#home-page'
 
 *Good*
 	.home-page-nav
