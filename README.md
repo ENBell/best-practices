@@ -15,7 +15,7 @@ CSS Best Practices
 Begin Best Practices
 --------------------
 
-####  Use class, tag and universal rules only. Don't use #ids.
+####  1. Use class, tag and universal rules only. Don't use #ids.
 
 *Bad Practice*
 ```css
@@ -30,10 +30,10 @@ footer:after
 [hidden="true"]
 ```
 
-> IDs are for JavaScript**
-> Unique class names are good Practice**
+> IDs are for JavaScript :)
+> Unique class names are good Practice
 
-####  Use '-' hyphens. Not camelCase or under_score to name classes.
+####  1. Use '-' hyphens. Not camelCase or under_score to name classes.
 
 *Bad Practice*
 ```css
