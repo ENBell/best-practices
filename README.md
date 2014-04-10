@@ -25,15 +25,13 @@ footer#home-page
 
 *Good Practice*
 ```css
-
-```css
 .home-page-nav
 footer:after
 [hidden="true"]
 ```
 
-**IDs are for JavaScript**
-**Unique class names are good Practice**
+> IDs are for JavaScript**
+> Unique class names are good Practice**
 
 ####  Use '-' hyphens. Not camelCase or under_score to name classes.
 
@@ -211,12 +209,12 @@ line 45 .large-bold-text {
 #### Separate your CSS files into logical, modular files.
 
 *Good Practice*
-*Separating your homepage css (home-page.css) from your global css (global.css).
-*Creating a separate file for forms (forms.css).
-*Modular files mean the file can work well independently. Files should have no more than one depency files (global.css).
+>Separating your homepage css (home-page.css) from your global css (global.css).
+>Creating a separate file for forms (forms.css).
+>Modular files mean the file can work well independently. Files should have no more than one depency files (global.css).
 
 *Bad Practice*
-*Duplicating css in different files. 
-*If you find repeated code in 
+>Duplicating css in different files. 
+>If you find repeated code in different files.
 
 
