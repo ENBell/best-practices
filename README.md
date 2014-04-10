@@ -12,7 +12,6 @@ CSS Best Practices
    Being able to change code in one place and not have it break other code is Good Coding.
 
 
-
 * * *
 
 ####  Don't use #ids. Use class, tag and universal rules only.
@@ -32,8 +31,8 @@ footer:after
 [hidden="true"]
 ```
 
-## IDs are for JavaScript
-## Unique class names are good
+**IDs are for JavaScript**
+**Unique class names are good**
 
 ####  Use '-' hyphens. Not camelCase or under_score to name classes.
 
