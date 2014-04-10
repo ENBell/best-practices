@@ -47,7 +47,7 @@ footer:after {}
 .homepage-box
 ```
 
-####  3. Don't nest identifiers more than 3 layers deep.
+####  3. Don't nest identifiers more than 3 layers deep. Nest as little as possible.
 
 *Bad Practice*
 ```css
@@ -66,33 +66,10 @@ footer:after {}
 *Best Practice*
 ```css
 /* Used in the .header .nav section */
-.special-class {
-	...
-}
-```
-
-####  4. Nest as little as possible. 
+.special-class {}
+``` 
 
 > Don't use nestings for location finding. Use notes for location.
-
-*Pretty Good Practice
-```css
-.header .nav .special-class {}
-```
-
-*Better
-```css
-/* .header */
-.nav .special-class {}
-```
-
-*Best Practice*
-```css
-/* Used in the .header .nav section */
-.special-class {}
-```
-
-1.
 
 ####  5. Don't use !important;
 
@@ -103,13 +80,14 @@ footer:after {}
 }
 ```
 
-> __!important;__ is used for testing and quick changes NOT production.
+> __!important;__ is used for testing and quick changes in the browser NOT production.
+> Using __!important;__ creates unecessary __!important;__ chaines.
 
 #### 6. AVOID using z-index.
 
 > Refactor and write better HTML before thinking you need z-index
 
-#### Only use the following three z-index numbers, after you've refactored your HTML:
+#### Only use the following three z-index numbers, after you have refactored your HTML:
 
 *Rarely Acceptable Practice*
 ```css
@@ -123,8 +101,8 @@ footer:after {}
   z-index: 300;
 }
 ```
-> Use good HTML practices to avoid having to use z-index. HTML tags that are 1) nested and 2) written later in the document will be placed on top of previous HTML tags. By writing better HTML you can avoid z-index.
-> z-indexes often create a chain of coding-to-fix-code when you add new elements and refactor old elements. z-index: 9999; is bad code. 
+> HTML tags that are 1) nested and 2) written later in the document will be placed on top of previous HTML tags creating a natural z-index. By writing better HTML you can avoid z-index.
+> z-indexes often create a chain dependent z-indexes; when you add new elements and refactor old elements you are required to re-write previously written z-indexes. z-index: 9999 = bad code. 
 
 #### 7. Make note of CSS dependant code (avoid it when possible.). Use inherit.
 
@@ -142,6 +120,7 @@ footer:after {}
 ```
 
 *Good Practice*
+```css
 .parent-box {
   font-size: 14px;
 }
@@ -152,6 +131,7 @@ footer:after {}
 .parent-box .right-side {
 	font-size: 16px;
 }
+```
 
 > Learning to use __inherit__ will help you significantly.
 
@@ -159,13 +139,13 @@ footer:after {}
 
 *Bad Practice*
 ```css
-line 45 .great-deal-text {
+line 45>> .great-deal-text {
 	font-weight: bold;
 	font-size: 1.2em;
 	line-height: 1.2em;
 }
 
-line 178 .testimonial-header-text {
+line 178>> .testimonial-header-text {
 	line-height: 1.2em;
 	font-weight: bold;
 	font-size: 1.2em;
@@ -175,7 +155,7 @@ line 178 .testimonial-header-text {
 *Good Practice*
 ```css
 
-line 45 .large-bold-text {
+line 45>> .large-bold-text {
 	font-weight: bold;
 	font-size: 1.2em;
 	line-height: 1.2em;
@@ -184,9 +164,14 @@ line 45 .large-bold-text {
 
 > If you refactor and check new code against previously written code before you will find that often the code has already been written.
 
-#### 9. Always comment major code break sections & be consistent.
+#### 9. Always comment major code break sections, be consistent & create indexes
 
 ```css
+/***** Index *****
+	1. Header
+	2. Footer
+***** Index End *****/
+
 /***** Header Start *****/
 	...
 /***** Header End   *****/
@@ -248,7 +233,20 @@ line 45 .large-bold-text {
 }
 ```
 
-> Attribute names are most often best used for quick styling of content
+> Attribute names are most often used for styling of text & image content. 
+
+*Tag Names*
+```css 
+h1,
+, .h1 {
+	font-size: 1.2em;
+}
+input[type='submit'],
+.submit {
+	background-color: green;
+}
+
+```
 
 *Page Names*
 ```css 
@@ -266,7 +264,7 @@ line 45 .large-bold-text {
 > Don't use page specific names in places where a global name is more accurate
 
 *Type Names*
-```css 
+```css
 .cancel-button {
 	display: inline-block;
 	width: 400px;
