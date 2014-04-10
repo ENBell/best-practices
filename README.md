@@ -2,15 +2,14 @@ CSS Best Practices
 ===========
 
 ###  Philosophy
-    The style guide is designed to help you make better long term coding decisions. Better coding means code is easier to navigate, easier to learn, easier to refactor and easier to control as it grows in lines of code and complexity.
+  *The style guide is designed to help you make better long term coding decisions. Better coding means code is easier to navigate, easier to learn, easier to refactor and easier to control as it grows in lines of code and complexity.
 
 #### Two major principles of good code:
 #####  Discoverable
-    Being able to quickly and easily determine where code is being used on a page and vicaversa is Good Coding. 
+  *Being able to quickly and easily determine where code is being used on a page and vicaversa is Good Coding. 
 
 #####  Modular
-    Being able to change code in one place and not have it break other code is Good Coding.
-
+  *Being able to change code in one place and not have it break other code is Good Coding.
 
 * * *
 
