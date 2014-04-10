@@ -14,7 +14,7 @@ CSS Best Practices
 
 * * *
 
-####  Don't use #ids. Use class, tag and universal rules only.
+####  Use class, tag and universal rules only. Don't use #ids.
 
 *Bad*
 ```css
