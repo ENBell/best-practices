@@ -16,13 +16,17 @@ Being able to change code in one place and not have it break other code is Good 
 1.  Don't use #ids. Use class, tag and universal rules only.
 
 *Bad*
-'''#home-page-nav
-footer#home-page'''
+'''html
+#home-page-nav
+footer#home-page
+'''
 
 *Good*
-'''.home-page-nav
+'''css
+.home-page-nav
 footer:after
-[hidden="true"]'''
+[hidden="true"]
+'''
 
 ## IDs are for JavaScript
 ## Unique class names are good
