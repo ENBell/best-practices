@@ -1,20 +1,16 @@
 CSS Best Practices
 ===========
 
-Philosophy
-----------
+1.  Philosophy
 The style guide is designed to help you make better long term coding decisions. This guide will help you write code that can be ea
 
-Discoverable
-----------
+1.  Discoverable
 Being able to quickly and easily determine where code is being used on a page and vicaversa is Good Coding. 
 
-Modular
-----------
+1.  Modular
 Being able to change code in one place and not have it break other code is Good Coding.
 
-Refactorable
-----------
+1.  Refactorable
 
 
 1.  Don't use #ids. Use class, tag and universal rules only.
