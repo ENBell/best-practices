@@ -63,7 +63,7 @@ footer:after
 }
 ```
 
-*Best*
+*Best Practice*
 ```css
 .special-class {
 	...
@@ -85,7 +85,7 @@ footer:after
 .nav .special-class {}
 ```
 
-*Best*
+*Best Practice*
 ```css
 /* .header .nav */
 .special-class {}
@@ -112,15 +112,15 @@ footer:after
 
 *Rarely Acceptable Practice*
 ```css
-	.rare-class {
-	  z-index: 100;
-	}
-	.rare-class {
-	  z-index: 200;
-	} 
-  .rare-class {
-  	z-index: 300;
-  }
+.rare-class {
+  z-index: 100;
+}
+.rare-class {
+  z-index: 200;
+} 
+.rare-class {
+  z-index: 300;
+}
 ```
 > Use good HTML practices to avoid having to use z-index. HTML tags that are 1) nested and 2) written later in the document will be placed on top of previous HTML tags. By writing better HTML you can avoid z-index.
 > z-indexes often create a chain of coding-to-fix-code when you add new elements and refactor old elements. z-index: 9999; is bad code. 
@@ -229,7 +229,75 @@ line 45 .large-bold-text {
 }
 ```
 
-#### 11. Separate your CSS files into logical, modular files.
+#### 11. Understand naming conventions & use them wisely.
+
+*Attribute Names*
+```css 
+.white {
+	color: white;
+}
+.large-font {
+	font-size: 
+}
+.left {
+	float: left
+}
+.center {
+	text-align: center;
+}
+```
+
+> Attribute names are most often best used for quick styling of content
+
+*Page Names*
+```css 
+.home-page-box {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+}
+.contact-nav h1 {
+	font-size: 1.2em;
+}
+
+```
+
+> Don't use page specific names in places where a global name is more accurate
+
+*Type Names*
+```css 
+.cancel-button {
+	display: inline-block;
+	width: 400px;
+	text-decoration: uppercase;
+	font-weight: bold;
+	padding: 10px 5px;
+	margin: 10px 15px;
+}
+.confirmation-box {
+	font-size: 1.2em;
+	padding: 10px 15px;
+	border: 1px solid lightgrey;
+}
+
+
+```
+
+*Custom Names*
+```css 
+.holiday-form input[type='submit'] {
+	background-color: #12345;
+}
+.scrim {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+```
+
+#### 12. Separate your CSS files into logical, modular files.
 
 *Good Practice*
 > Separating your homepage css (home-page.css) from your global css (global.css).
