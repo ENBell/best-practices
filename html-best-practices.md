@@ -15,7 +15,7 @@ HTML Best Practices
 HTML Rules
 --------------------
 
-####  1. Don't write inline styles, unless your coding for email.
+####  1. Don't use inline styles, unless your coding for email.
 
 *Bad Practice*
 ```html
@@ -33,6 +33,44 @@ HTML Rules
 }
 ```
 
-> IDs are for JavaScript :)
+#### 2. Avoid rocket code. Avoid nesting multiple single div tags.
 
-> Unique class names are good Practice
+*Bad Practice*
+```html
+<div class="main-wrapper">
+	<div class="content">
+		<div class="main-content">
+			<div class="marketing-box">
+				<div class="left-side">...</div>
+				<div class="right-side">...</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+```
+
+*Good Practice*
+```html
+<div class="main-wrapper">
+	<div class="marketing-box">
+		<div class="left-side">...</div>
+		<div class="right-side">...</div>
+	</div>
+</div>
+```
+
+#### 2. Avoid more than 3 class names. Create unique class.
+
+*Bad Practice*
+```html
+<div class="main-box left marketing-style short-from-style">
+</div>
+
+```
+
+*Good Practice*
+```html
+<div class="marketing-form-2">
+</div>
+```
