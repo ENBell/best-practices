@@ -80,14 +80,14 @@ footer:after {}
 }
 ```
 
-> __!important;__ is used for testing and quick changes in the browser NOT production.
-> Using __!important;__ creates unecessary __!important;__ chaines.
+> __!important__ is used for testing and quick changes in the browser NOT production.
+> Using __!important__ creates unecessary __!important__ chaines.
 
 #### 6. AVOID using z-index.
 
 > Refactor and write better HTML before thinking you need z-index
 
-#### Only use the following three z-index numbers, after you have refactored your HTML:
+##### Only use the following three z-index numbers, after you have refactored your HTML:
 
 *Rarely Acceptable Practice*
 ```css
@@ -133,9 +133,7 @@ line 45>> .large-bold-text {
 
 > If you refactor and check new code against previously written code before you will find that often the code has already been written.
 
-#### 8. Always comment major code break sections, be consistent & create indexes
-
-> Every CSS file should have an index and section code breaks.
+#### 8. Every CSS file should have an index and section code breaks.
 
 ```css
 /***** Index *****
@@ -154,7 +152,7 @@ line 45>> .large-bold-text {
 
 > This will help to separate files as content expands.
 
-#### 9. Don't use negative margins to overwrite code or compensate for padding.
+#### 9. Don't use negative margins to overwrite refactorable code or compensate for padding.
 
 *Bad Practice*
 ```css 
@@ -189,7 +187,7 @@ line 45>> .large-bold-text {
 }
 ```
 
-#### 11. Understand naming conventions & think about why your naming a class a certain way.
+#### 11. Understand naming conventions & think about why you are naming a class a certain way.
 
 *Attribute Names*
 ```css 
@@ -206,9 +204,9 @@ line 45>> .large-bold-text {
 	text-align: center;
 }
 ```
+
 > Classes with one attribute should be named after the attribute.
  
-
 *Tag Names*
 ```css 
 h1,
@@ -258,7 +256,7 @@ input[type='submit'],
 
 *Custom Names*
 ```css 
-.holiday-form input[type='submit'] {
+.holiday-form {
 	background-color: #12345;
 }
 .scrim {
@@ -269,6 +267,8 @@ input[type='submit'],
 	left: 0;
 }
 ```
+
+> Think about what the name implies for others reading your code.
 
 #### 12. Separate your CSS files into logical, modular files.
 
