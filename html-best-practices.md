@@ -33,7 +33,7 @@ HTML Rules
 }
 ```
 
-#### 2. Avoid rocket code. Avoid nesting multiple single div tags.
+#### 2. Avoid unecessary nesting of single div tags.
 
 *Bad Practice*
 ```html
@@ -60,6 +60,14 @@ HTML Rules
 </div>
 ```
 
+*Better Practice*
+```html
+<div class="main-wrapper marketing-box">
+	<div class="left-side">...</div>
+	<div class="right-side">...</div>
+</div>
+```
+
 #### 2. Avoid more than 3 class names. Create unique class.
 
 *Bad Practice*
@@ -74,3 +82,40 @@ HTML Rules
 <div class="marketing-form-2">
 </div>
 ```
+
+#### 3. Don't write text in all caps.
+
+*Bad Practice*
+```html
+<h1>START SAVING TODAY!</h1>
+```
+
+*Good Practice*
+```html
+<h1>Start Saving Today!</h1>
+```
+
+#### 4. Don't use tables for page layout. Unless working with emails.
+
+#### 5. When commenting closing div's include the id or name.
+
+*Bad Practice*
+```html
+	<div id="master-wrapper">
+	...
+	</div> <!-- /master-wrapper -->
+	<div class="content">
+	...
+	</div> <!-- /content -->
+```
+
+*Good Practice*
+```html
+	<div id="master-wrapper">
+	...
+	</div> <!-- /#master-wrapper -->
+	<div class="content">
+	...
+	</div> <!-- /.content -->
+```
+

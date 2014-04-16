@@ -104,38 +104,7 @@ footer:after {}
 > HTML tags that are 1) nested and 2) written later in the document will be placed on top of previous HTML tags creating a natural z-index. By writing better HTML you can avoid z-index.
 > z-indexes often create a chain dependent z-indexes; when you add new elements and refactor old elements you are required to re-write previously written z-indexes. z-index: 9999 = bad code. 
 
-#### 7. Make note of CSS dependant code (avoid it when possible.). Use inherit.
-
-*Bad Practice*
-```css
-.parent-box {
-  font-size: 14px;
-}
-.parent-box .left-side {
-  font-size: inherit;
-}
-.parent-box .right-side {
-	font-size: 16px;
-}
-```
-
-*Good Practice*
-```css
-.parent-box {
-  font-size: 14px;
-}
-/* .left-side font-size should always match the parent box
-.parent-box .left-side {
-  font-size: inherit;
-}
-.parent-box .right-side {
-	font-size: 16px;
-}
-```
-
-> Learning to use __inherit__ will help you significantly.
-
-#### 8. Don't repeat code.
+#### 7. Don't repeat code.
 
 *Bad Practice*
 ```css
@@ -164,7 +133,9 @@ line 45>> .large-bold-text {
 
 > If you refactor and check new code against previously written code before you will find that often the code has already been written.
 
-#### 9. Always comment major code break sections, be consistent & create indexes
+#### 8. Always comment major code break sections, be consistent & create indexes
+
+> Every CSS file should have an index and section code breaks.
 
 ```css
 /***** Index *****
@@ -181,25 +152,28 @@ line 45>> .large-bold-text {
 /***** Footer End   *****/
 ```
 
-#### 10. Don't use negative margins.
+> This will help to separate files as content expands.
+
+#### 9. Don't use negative margins to overwrite code or compensate for padding.
 
 *Bad Practice*
 ```css 
 	.menu-item h1 {
-	margin-top: -5px;
-	line-height: 1.3em;
-}
+		margin-top: -5px;
+		padding: 10px 0;
+	}
 ```
 
 *Good Practice*
 ```css 
-.menu-item h1 {
-	margin-top: 0;
-	line-height: 1em;
-}
+	.menu-item h1 {
+		padding: 10px 0 5px 0;
+	}
 ```
 
-#### 11. Don't put values on 0.
+> Negative margins may be used to position backgrounds or center absolute positioned elements, but try to avoid them.
+
+#### 10. Don't put values on 0.
 
 *Bad Practice*
 ```css 
@@ -215,7 +189,7 @@ line 45>> .large-bold-text {
 }
 ```
 
-#### 12. Understand naming conventions & use them wisely.
+#### 11. Understand naming conventions & think about why your naming a class a certain way.
 
 *Attribute Names*
 ```css 
@@ -232,13 +206,13 @@ line 45>> .large-bold-text {
 	text-align: center;
 }
 ```
-
-> Attribute names are most often used for styling of text & image content. 
+> Classes with one attribute should be named after the attribute.
+ 
 
 *Tag Names*
 ```css 
 h1,
-, .h1 {
+.h1 {
 	font-size: 1.2em;
 }
 input[type='submit'],
@@ -249,7 +223,7 @@ input[type='submit'],
 ```
 
 *Page Names*
-```css 
+```css
 .home-page-box {
 	margin-top: 5px;
 	margin-bottom: 10px;
@@ -296,7 +270,7 @@ input[type='submit'],
 }
 ```
 
-#### 13. Separate your CSS files into logical, modular files.
+#### 12. Separate your CSS files into logical, modular files.
 
 *Good Practice*
 > Separating your homepage css (home-page.css) from your global css (global.css).
@@ -307,4 +281,20 @@ input[type='submit'],
 > Duplicating css in different files. 
 > If you find repeated code in different files.
 
+#### 13. Don't add arbitrary values on tags.
 
+ *Bad Practice*
+```css 
+img {
+	float: left;
+	margin-top: 6px;
+}
+```
+
+*Good Practice*
+```css 
+img.solar-marketing-display {
+	float: left;
+	margin-top: 6px;
+}
+```

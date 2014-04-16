@@ -1,4 +1,4 @@
-JavaScript Best Practices
+DMP Best Practices
 ==================
 
 ###  Philosophy
@@ -12,65 +12,48 @@ JavaScript Best Practices
   Being able to change code in one place and not have it break other code is Good Coding. Being able to reuse code without having to pull in complex depencencies is Good Coding.
 
 * * *
-Javascript Rules
+html Rules  
 --------------------
 
-####  1. Use camelCase for variables.
+####  1. Use a dmp view ID on all views. ??Can we automate this??
 
 *Bad Practice*
-```javascript
-	var random_variable,
-		random_Variable_Two;
+```html
+	<div id="featured" class="homepage-wrapper">...</div>
 ```
 
 *Good Practice*
-```javascript
-	var randomVariable,
-		randomVariable2;
+```html
+	<div dmp_id="467" id="featured" class="homepage-wrapper">...</div>
 ```
 
 > Industry standard
 
-#### 2. All boolean variables should start with 'is'
+#### 2. Opening tags and closing tags should always be in the same file/view/
 
 *Bad Practice*
-```javascript
-	var valid = true;
+```html
+	{{view id=embed v_id=123}
+	</div>
+	}
 ```
 
 *Good Practice*
-```javascript
-	var isValid = true;
+```html
+	<div dmp_id="467" id="featured" class="homepage-wrapper">...</div>
 ```
 
-
- #### 3. Place constants or time variables (animation durations, etc.) at the top of the file.
-
-*Good Practice*
-```javascript
-	var isValid = true;
-```
-
-#### 4. Never have more than one global variable.
-
-#### 5. Use white-space and line breaks as follows:
+#### 2. Always include file name in comments when embedding a view.
 
 *Bad Practice*
-```javascript
-	for(var i=0,j=arr.length;i<j;i++){
-		// Do something.
-	}
-	for(var i=0,j=arr.length;i<j;i++)
-	{
-		// Do something.
-	}
+```html
+	{{view id=embed v_id=123}}
 ```
 
 *Good Practice*
-```javascript
-	for (var i = 0, j = arr.length; i < j; i++) {
-		// Do something.
-	}
+```html
+	<!-- HP:Home -->
+	{{view id=embed v_id=123}}
 ```
 
-
+#### 3.  
