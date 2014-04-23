@@ -62,7 +62,7 @@ Javascript Rules
 	}
 	for(var i=0,j=arr.length;i<j;i++)
 	{
-		// Do something.
+		// Do something
 	}
 ```
 
@@ -73,4 +73,4 @@ Javascript Rules
 	}
 ```
 
-
+6. Strive to create generalized functions that take parameters and return values. 

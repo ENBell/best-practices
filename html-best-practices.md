@@ -2,7 +2,7 @@ HTML Best Practices
 ==================
 
 ###  Philosophy
-  The style guide is designed to help you & your team make better, consitent, long-term coding decisions. Better coding means code is easier to navigate, easier to learn, easier to refactor and easier to control as it grows in thousands and thousands of lines of code and increases in complexity.
+  The style guide is designed to help you & your team make better, consitent, long-term coding decisions. Better coding means code is easier to navigate, easier to learn, easier to refactor and easier to control as it grows into thousands and thousands of lines of code and increases in complexity.
 
 #### Two major principles of good code:
 #####  Discoverable
