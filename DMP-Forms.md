@@ -149,6 +149,7 @@ When customizing forms add the custom class name to the \<form\> tag.
 
 *Example*
 
+HTML
 ```html
 <form action="/form/capture" method="post" class="subtle_form custom-class-name">
     <input type="text" class="i_text faasub_name_first" name="FaasSubmission[faasub_name_first]" placeholder="First Name" data-pp-field="pp_fname" title="First Name" required=""> 
@@ -157,7 +158,7 @@ When customizing forms add the custom class name to the \<form\> tag.
  </form>
 ```
 
-
+CSS
 ```html
 form.custom-class-name {
 	...
@@ -198,13 +199,15 @@ Various CSS classes used in forms (mainly older forms using subtle_forms.js):
 ####  3. JavaScript
 ----
 
-1. *vivintFormManager.js* a refactored version of subtle_forms.js, is used to validate and control all form submission.  vivintFormManager.js is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
+*vivintFormManager.js* 
+
+a refactored version of subtle_forms.js, is used to validate and control all form submission.  *vivintFormManager.js* is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
 
 *vivintFormManager.js* is used for all form validation. *vivintFormManager.js* VFM is used on all the 2014 pages. Older pages use the *subtle_forms.js* for validation.
 
 > Don't submit forms using inline javaScript
 
-3. All forms should be submitted via standard HTML5 practices to be validated. Use Vivint standard regex patterns for validation.
+ All forms should be submitted via standard HTML5 practices to be validated. Use Vivint standard regex patterns for validation.
   
 > html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
 > html5 postal Regex = [\d|\s|\-\w]{5,14}
@@ -214,10 +217,12 @@ Various CSS classes used in forms (mainly older forms using subtle_forms.js):
 ----
 
 *Forms*
+
 1. SaleForce - 
 2. Eloqua - Used for nurturing and remarketing ("Faas" prefix is used for Eloqua)
 
 *Page*
+
 1. Google Analytics - 
 2. Site Catalyst - 
 3. Optimizely - Used for test data and conversion rates
