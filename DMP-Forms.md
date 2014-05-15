@@ -155,6 +155,7 @@ When customizing forms add the custom class name to the <form> tag.
     <input type="submit" class="i_submit" name="Submit" value="Request Quote" data-eventcategory="form" data-eventaction="click" data-eventlabel="form-submit">
     <input type="hidden" class="faasub_send_to_sfdc" name="FaasSubmission[faasub_send_to_sfdc]" value="1">
  </form>
+`
 
 `css
 form.custom-class-name {
