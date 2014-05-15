@@ -145,7 +145,7 @@ button ->
 ####  3. CSS
 ----
 
-When customizing forms add the custom class name to the <form> tag.
+When customizing forms add the custom class name to the \<form\> tag.
 
 *Example*
 
