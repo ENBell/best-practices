@@ -20,10 +20,9 @@ DMP Form Documentation
 
 * * *
 #### 1. Getting Started
-##### 1.2 Form View Naming Conventions
 
 -----
-Submission Process:
+##### 1.2 Form Submission Process
 
 Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. And various forms are being sent directly to Eloqua.
 
@@ -31,41 +30,45 @@ SalesForce is used as our main CMS.
 SalesForce can send data to Eloqua.
 
 Eloqua is used for nuture marketing 
+
 -----
 
 *Form Actions*
-1. action="/form/capture" *Main Action*
-2. action="https://s2984.t.eloqua.com/e/f2"
-3. 
+0. action="/form/capture" *Main Action*
+0. action="https://s2984.t.eloqua.com/e/f2"
 
+-----
 ##### 1.2 Form View Naming Conventions
 
 - FormBase: \[Custom Name\]
-> FormBase: Primary Sales
+> EXAMPLE: FormBase: Primary Sales
 
 - FormBase: \[Custom Name\]\[Modification\]
-> FormBase: Primary Sales - 3 Form Test
+> EXAMPLE: FormBase: Primary Sales - 3 Form Test
 
 - FormWrap: \[Custom Name\]
-> FormWrap: Holiday Form
+> EXAMPLE: FormWrap: Holiday Form
 
 - FormMsg: \[Custom Name\]
-> FormMsg: 
+> EXAMPLE: FormMsg: Terms and Conditions
 
 - \[Department\]:FormBase: \[Custom Name\]
-> Solar:FormBase: Primary
+> EXAMPLE: Solar:FormBase: Primary
 
 - \[Department\]:FormWrap: \[Custom Name\]
-> Wireless:FormWrap: Special Offer
+> EXAMPLE: Wireless:FormWrap: Special Offer
+
+
+*Rules For Naming*
 
 1. If you have the form html (<form class="subtle_form {{form_class}}" action="..." ...>) then you are creating a FormBase or a Modification of a Form Base. 
 2. If you embed a form view ({{view id=embed v_id=97}}) you are creating a wrapper
 3. If you don't embed or use a <form> tag you are creating a FormMsg
 
-Ideas for Naming:
+*Ideas for Naming:*
 1. Time Sensative Forms Need Expirations -> "FormWrap: BlackFriday (Exp. Dec2014)"
-2. 
-3. 
+ 
+
 #### 2. HTML
 
 ##### 1.2 HTML Forms
