@@ -9,17 +9,18 @@ DMP Form Documentation
 0. Getting Started
   * Form Submission Process
   * Form Naming Convention
-0. HTML/DMP
+0. HTML
   * Form View Naming Conventions
   * HTML Forms
+  * DMP
 0. CSS
 0. JavaScript
 0. Analytics
 
 * * *
 #### 1. Getting Started
-
 -----
+
 ##### 1.2 Form Submission Process
 
 Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. Various forms are being sent directly to Eloqua.
@@ -37,7 +38,6 @@ Eloqua is used for nuture marketing
 0.
 
 ##### 1.2 Form View Naming Conventions
------
 
 - FormBase: \[Custom Name\]
 > EXAMPLE: FormBase: Primary Sales
@@ -71,9 +71,9 @@ Eloqua is used for nuture marketing
 
 * * *
 #### 2. HTML
+----
 
 ##### 2.1 Form Validation 
-----
 
 Every form needs to have form validation. Forms are validated two ways:
 
@@ -88,9 +88,7 @@ Every form needs to have form validation. Forms are validated two ways:
 0.  vivintFormManager.js will add a class ".problem" to the invalid input.
 0.  vivintFormManager.js will display an error method (this is currently NOT in use).
 
-
-##### 2.1 Basic From Validation 
-----
+##### 2.2 Basic From Validation 
 
 Refer to vivintFormManager for all validation requirements.
 
@@ -127,10 +125,11 @@ A few *Hidden Field* used in Eloqua:
 <a href="javascript:{}" class="button " onclick="document.getElementById('form38').submit();">Submit</a>
 `
 
-#### DMP
+##### 2.3 DMP
 
-v_id 97 FORM: Primary Sales -> Is the main form
+The following form is the primary form in DMP:
 
+> v_id 97 FORM: Primary Sales
 
 ###### Embedding forms in DMP
 
@@ -141,52 +140,51 @@ foid ->
 sfdc ->
 elq ->
 button -> 
-####  2. CSS
+
+* * *
+####  3. CSS
+----
+
 CSS classes used in forms:
-subtle_form_result -> Used in the main div wrapper
-subtle_form_message -> Used for all form messages
-subtle_form -> Used with the <form> tag
-i_text -> Used with the text/tel/email input fields
-faasub_name_first
-faasub_name_last
-faasub_phone
-faasub_postal
-faasub_email -> Used for 
-submit-text -> Used to format the consent to be contacted text before the submit button
-i_submit ->
-faasub_send_to_sfdc ->
-faasub_send_to_elq ->
-faasub_thank_you_url ->
-faasub_source_foid ->
-faasub_elq_efid ->
-faasub_elq_esid ->
-faasub_elq_ecid ->
-faasub_elq_ecaid ->
-faasub_elq_egid ->
-faasub_form_action ->
 
+- subtle_form_result -> Used in the main div wrapper
+- subtle_form_message -> Used for all form messages
+- subtle_form -> Used with the <form> tag
+- i_text -> Used with the text/tel/email input fields
+- faasub_name_first
+- faasub_name_last
+- faasub_phone
+- faasub_postal
+- faasub_email -> Used for 
+- submit-text -> Used to format the consent to be contacted text before the submit button
+- i_submit ->
+- faasub_send_to_sfdc ->
+- faasub_send_to_elq ->
+- faasub_thank_you_url ->
+- faasub_source_foid ->
+- faasub_elq_efid ->
+- faasub_elq_esid ->
+- faasub_elq_ecid ->
+- faasub_elq_ecaid ->
+- faasub_elq_egid ->
+- faasub_form_action ->
+
+* * *
 ####  3. JavaScript
 ----
 
+##### 3.1 Validating Forms
 
+1. *vivintFormManager.js* a refactored version of subtle_forms.js, is used to validate and control all form submission.  vivintFormManager.js is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
 
-####  3. JavaScript
-----
+*vivintFormManager.js* is used for all form validation. *vivintFormManager.js* VFM is used on all the 2014 pages. Older pages use the *subtle_forms.js* for validation.
 
-vivintFormManager.js (VFM) is used for all form validation. VFM is used on all the 2014 pages. Older pages use the subtle_forms.js for validation.
+> Don't submit forms using inline javaScript
 
-> subtle_forms.js (older)
-> vivintFormManager.js (newer)
-
-#### Validating Forms
-
-1.  All forms should be submitted via standard HTML5 practices to be validated. Use Vivint standard regex patterns for validation.
+3. All forms should be submitted via standard HTML5 practices to be validated. Use Vivint standard regex patterns for validation.
   
 > html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
 > html5 postal Regex = [\d|\s|\-\w]{5,14}
-
-2. vivintFormManager.js, a refactored version of subtle_forms.js(depreciated), is used to validate and control all form submission.  vivintFormManager.js is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
-
 
 ####  4. Analytics
 ----
