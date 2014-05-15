@@ -7,11 +7,11 @@ DMP Form Documentation
 #### Index
 
 0.Getting Started
-  * Form Submission Process
-  * Form Naming Convention
+- - Form Submission Process
+- - Form Naming Convention
 0. HTML/DMP
-  * Form View Naming Conventions
-  * HTML Forms
+- - Form View Naming Conventions
+- - HTML Forms
 0. CSS
 0. JavaScript
 0. Backend
