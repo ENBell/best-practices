@@ -14,9 +14,7 @@ DMP Form Documentation
   * HTML Forms
 0. CSS
 0. JavaScript
-0. Backend
 0. Analytics
-0. Company
 
 * * *
 #### 1. Getting Started
@@ -24,7 +22,7 @@ DMP Form Documentation
 -----
 ##### 1.2 Form Submission Process
 
-Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. And various forms are being sent directly to Eloqua.
+Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. Various forms are being sent directly to Eloqua.
 
 SalesForce is used as our main CMS.
 SalesForce can send data to Eloqua.
@@ -74,7 +72,7 @@ Eloqua is used for nuture marketing
 * * *
 #### 2. HTML
 
-##### 1.2 Form Validation 
+##### 2.1 Form Validation 
 ----
 
 Every form needs to have form validation. Forms are validated two ways:
@@ -82,29 +80,35 @@ Every form needs to have form validation. Forms are validated two ways:
 0.  HTML5 Form Validation
 0.  vivintFormManager.js
 
->  No additional validation should be necessary.
+>  Additional validation should NOT be necessary.
 
 *Invalid Fields*
+
 0.  HTML5 Validation will display messages. Google "HTML5 validation" if you don't know how to use them.
 0.  vivintFormManager.js will add a class ".problem" to the invalid input.
 0.  vivintFormManager.js will display an error method (this is currently NOT in use).
 
+
+##### 2.1 Basic From Validation 
+----
+
+Refer to vivintFormManager for all validation requirements.
+
+The following input fields are required:
+
+0. FaasSubmission
+1. FaasSubmission[faasub_name_first]
+2. FaasSubmission[faasub_name_last]
+3. FaasSubmission[faasub_phone]
+  * Input length: 10-18 (min-max) (Both min and max are required.)
+4. FaasSubmission[faasub_postal] or postal
+  * Input length: 5-14 (min-max) (Both min and max are required.
+5. FaasSubmission[faasub_email] or email
+  * 
+6. FaasSubmission[faasub_name_full] or full_name
+  *
+
 > Faas == "Forms as a Service"
-
-
-
-The following input field names are used (all fields are required):
-	1. FaasSubmission[faasub_name_first] or first_name
-	  1.1
-	2. FaasSubmission[faasub_name_last]  or last_name
-		2.1 
-	3. FaasSubmission[faasub_phone] or phone
-	  3.1 Input length: 10-18 (min-max) (Both min and max are required.)
-	4. FaasSubmission[faasub_postal] or postal
-	  4.1 Input length: 5-14 (min-max) (Both min and max are required.
-	5. FaasSubmission[faasub_email] or email
-		5.1
-	6. FaasSubmission[faasub_name_full] or full_name
 
 The following *Hidden Field* names are required for Eloqua
 	1. FaasSubmission[faasub_send_to_sfdc]
@@ -125,7 +129,11 @@ data-done-path :
 data-pp-field :
 
 
-> Don't use inline JavaScript to submit forms;
+> Don't use inline JavaScript to submit forms 
+
+`html
+<a href="javascript:{}" class="button " onclick="document.getElementById('form38').submit();">Submit</a>
+`
 
 #### DMP
 
@@ -170,9 +178,17 @@ faasub_elq_egid ->
 faasub_form_action ->
 
 ####  3. JavaScript
+----
 
-	subtle_forms.js
-	vivintFormManager.js
+
+
+####  3. JavaScript
+----
+
+vivintFormManager.js (VFM) is used for all form validation. VFM is used on all the 2014 pages. Older pages use the subtle_forms.js for validation.
+
+> subtle_forms.js (older)
+> vivintFormManager.js (newer)
 
 #### Validating Forms
 
@@ -184,18 +200,15 @@ faasub_form_action ->
 2. vivintFormManager.js, a refactored version of subtle_forms.js(depreciated), is used to validate and control all form submission.  vivintFormManager.js is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
 
 
-####  4. Backend
+####  4. Analytics
+----
 
-
-
-####  5. Analytics
-
-Analytics are sent to the following:
-1. Google Analytics - 
+*Forms*
+1. SaleForce - 
 2. Eloqua - Used for nurturing and remarketing ("Faas" prefix is used for Eloqua)
-3. SaleForce - 
-4. Site Catalyst - 
-5. Optimizely - Used for test data and conversion rates
 
-####  6. Company 
+*Page*
+1. Google Analytics - 
+2. Site Catalyst - 
+3. Optimizely - Used for test data and conversion rates
 
