@@ -207,11 +207,15 @@ a refactored version of subtle_forms.js, is used to validate and control all for
 
 Older pages use the *subtle_forms.js* for validation.
 
-All forms should be submitted via standard HTML5 practices to be validated. Use Vivint standard regex patterns for validation.
+Use Vivint standard regex patterns for validation.
   
 > html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
 
+`<input type="tel" pattern="[\d|\.|\s|\-|\+|\(|\)]{10,18}"`
+
 > html5 postal Regex = [\d|\s|\-\w]{5,14}
+
+`<input type="text" class="fassub_postal" pattern="[\d|\s|\-\w]{5,14}"`
 
 * * *
 ####  4. Analytics
