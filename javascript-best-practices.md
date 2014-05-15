@@ -84,7 +84,7 @@ Javascript Rules
 
 #### 3. Avoid writing global variables.
 
-> If you need to write global variables document it really really well.
+> If you need to write global variables document it really really well. But avoid them.
 
 #### 6. Write functional javascript
 
@@ -92,13 +92,13 @@ Javascript Rules
 
 *Bad Practice*
 ```javascript
-	if (condition) {
-		// setup listeners
-		...
-		// Check for conditions
-		...
-		// More Stuff
-	}	
+
+	// setup listeners
+	...
+	// Check for conditions
+	...
+	// More Stuff
+
 ```
 
 *Good Practice*
