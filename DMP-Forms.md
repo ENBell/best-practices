@@ -31,14 +31,15 @@ SalesForce can send data to Eloqua.
 
 Eloqua is used for nuture marketing 
 
------
-
 *Form Actions*
-0. action="/form/capture" *Main Action*
-0. action="https://s2984.t.eloqua.com/e/f2"
 
------
+0. action="/form/capture" *(Main Action)*
+0. action="https://s2984.t.eloqua.com/e/f2"
+0.
+0.
+
 ##### 1.2 Form View Naming Conventions
+-----
 
 - FormBase: \[Custom Name\]
 > EXAMPLE: FormBase: Primary Sales
@@ -66,24 +67,31 @@ Eloqua is used for nuture marketing
 3. If you don't embed or use a <form> tag you are creating a FormMsg
 
 *Ideas for Naming:*
-1. Time Sensative Forms Need Expirations -> "FormWrap: BlackFriday (Exp. Dec2014)"
- 
 
+1. Time Sensative Forms Need Expirations 
+> EXAMPLE: Wireless:FormWrap: BlackFriday (Exp. Dec2014)
+
+* * *
 #### 2. HTML
 
-##### 1.2 HTML Forms
+##### 1.2 Form Validation 
+----
+
+Every form needs to have form validation. Forms are validated two ways:
+
+0.  HTML5 Form Validation
+0.  vivintFormManager.js
+
+>  No additional validation should be necessary.
+
+*Invalid Fields*
+0.  HTML5 Validation will display messages. Google "HTML5 validation" if you don't know how to use them.
+0.  vivintFormManager.js will add a class ".problem" to the invalid input.
+0.  vivintFormManager.js will display an error method (this is currently NOT in use).
+
+> Faas == "Forms as a Service"
 
 
-### Contact Forms
-Use the following div wrapper:
-```html
-<div class="subtle_form_result">{{form}}</div>
-```
-
-Use the following for the all form messages:
-	1. 
-
-> Faas = "Forms as a Service"
 
 The following input field names are used (all fields are required):
 	1. FaasSubmission[faasub_name_first] or first_name
