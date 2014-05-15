@@ -82,9 +82,9 @@ Every form needs to have form validation. Forms are validated two ways:
 
 >  Additional validation should NOT be necessary.
 
-*Invalid Fields*
+*Invalid Field Messages*
 
-0.  HTML5 Validation will display messages. Google "HTML5 validation" if you don't know how to use them.
+0.  HTML5 Validation will display messages. Search "HTML5 validation" if you don't know how to use them.
 0.  vivintFormManager.js will add a class ".problem" to the invalid input.
 0.  vivintFormManager.js will display an error method (this is currently NOT in use).
 
@@ -96,7 +96,7 @@ Refer to vivintFormManager for all validation requirements.
 
 The following input fields are required:
 
-0. FaasSubmission
+0. FaasSubmission[faasub_name_full]
 1. FaasSubmission[faasub_name_first]
 2. FaasSubmission[faasub_name_last]
 3. FaasSubmission[faasub_phone]
@@ -104,45 +104,33 @@ The following input fields are required:
 4. FaasSubmission[faasub_postal] or postal
   * Input length: 5-14 (min-max) (Both min and max are required.
 5. FaasSubmission[faasub_email] or email
-  * 
-6. FaasSubmission[faasub_name_full] or full_name
-  *
+  * Regex is used to determine if valid address
 
 > Faas == "Forms as a Service"
 
-The following *Hidden Field* names are required for Eloqua
-	1. FaasSubmission[faasub_send_to_sfdc]
-	2. FaasSubmission[faasub_send_to_elq]
-	3. FaasSubmission[faasub_thank_you_url]
-	4. FaasSubmission[faasub_source_foid]
-	5. FaasSubmission[faasub_elq_efid]
-	6. FaasSubmission[faasub_elq_esid]
-	7. FaasSubmission[faasub_elq_ecid]
-	8. FaasSubmission[faasub_elq_ecaid]
-	9. FaasSubmission[faasub_elq_egid]
-	10. FaasSubmission[faasub_form_action]
-	11. {{token id=csrf_name}}
+A few *Hidden Field* used in Eloqua:
 
-The following can be used as a submit button:
-
-data-done-path : 
-data-pp-field :
-
+1. FaasSubmission[faasub_send_to_sfdc]
+2. FaasSubmission[faasub_send_to_elq]
+3. FaasSubmission[faasub_thank_you_url]
+4. FaasSubmission[faasub_source_foid]
+5. FaasSubmission[faasub_elq_efid]
+6. FaasSubmission[faasub_elq_esid]
+7. FaasSubmission[faasub_elq_ecid]
+8. FaasSubmission[faasub_elq_ecaid]
+9. FaasSubmission[faasub_elq_egid]
+10. FaasSubmission[faasub_form_action]
 
 > Don't use inline JavaScript to submit forms 
-
+*Example*
 `html
 <a href="javascript:{}" class="button " onclick="document.getElementById('form38').submit();">Submit</a>
 `
 
 #### DMP
 
-> Name views that contain individual forms with: "FORM:[custom name]"
-> Views that are wrappers and embed other forms: "form:[custom name]"
-
 v_id 97 FORM: Primary Sales -> Is the main form
 
-> Form Messages should be named: form-m:
 
 ###### Embedding forms in DMP
 
