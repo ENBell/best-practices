@@ -5,7 +5,7 @@ DMP Form Documentation
   This document will show you how to create, edit and navigate the complexities of the forms we use at Vivint. This includes html, css, javascript, backend, analytics, and how the forms are used in the company.
 
 #### Index
-0. [Getting Started][1]
+0.[Getting Started][1]
   * Form Submission Process
   * Form Naming Convention
 0. [HTML/DMP][2]
@@ -16,7 +16,7 @@ DMP Form Documentation
 0. [Backend][5]
 0. [Analytics][6]
 0. [Company][7]
-
+[link][2]
 * * *
 #### 1. Getting Started[1]
 ##### 1.2 Form View Naming Conventions
