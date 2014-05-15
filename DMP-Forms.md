@@ -173,8 +173,6 @@ CSS classes used in forms:
 ####  3. JavaScript
 ----
 
-##### 3.1 Validating Forms
-
 1. *vivintFormManager.js* a refactored version of subtle_forms.js, is used to validate and control all form submission.  vivintFormManager.js is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
 
 *vivintFormManager.js* is used for all form validation. *vivintFormManager.js* VFM is used on all the 2014 pages. Older pages use the *subtle_forms.js* for validation.
@@ -186,6 +184,7 @@ CSS classes used in forms:
 > html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
 > html5 postal Regex = [\d|\s|\-\w]{5,14}
 
+* * *
 ####  4. Analytics
 ----
 
