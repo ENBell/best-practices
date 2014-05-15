@@ -5,20 +5,20 @@ DMP Form Documentation
   This document will show you how to create, edit and navigate the complexities of the forms we use at Vivint. This includes html, css, javascript, backend, analytics, and how the forms are used in the company.
 
 #### Index
-0.[Getting Started][1]
+0.Getting Started
   * Form Submission Process
   * Form Naming Convention
-0. [HTML/DMP][2]
+0. HTML/DMP
   * Form View Naming Conventions
   * HTML Forms
-0. [CSS][3]
-0. [JavaScript][4]
-0. [Backend][5]
-0. [Analytics][6]
-0. [Company][7]
-[link][2]
+0. CSS
+0. JavaScript
+0. Backend
+0. Analytics
+0. Company
+
 * * *
-#### 1. Getting Started[1]
+#### 1. Getting Started
 ##### 1.2 Form View Naming Conventions
 
 -----
@@ -65,7 +65,7 @@ Ideas for Naming:
 1. Time Sensative Forms Need Expirations -> "FormWrap: BlackFriday (Exp. Dec2014)"
 2. 
 3. 
-#### 2. HTML[2]
+#### 2. HTML
 
 ##### 1.2 HTML Forms
 
