@@ -6,11 +6,11 @@ DMP Form Documentation
 
 #### Index
 0. [Getting Started][1]
-- Form Submission Process
-- Form Naming Convention
+  * Form Submission Process
+  * Form Naming Convention
 0. [HTML/DMP][2]
-- Form View Naming Conventions
-- HTML Forms
+  * Form View Naming Conventions
+  * HTML Forms
 0. [CSS][3]
 0. [JavaScript][4]
 0. [Backend][5]
@@ -24,7 +24,7 @@ DMP Form Documentation
 -----
 Submission Process:
 
-Forms are submitted and saved to a database. Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. And various forms are being sent directly to Eloqua.
+Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. And various forms are being sent directly to Eloqua.
 
 SalesForce is used as our main CMS.
 SalesForce can send data to Eloqua.
