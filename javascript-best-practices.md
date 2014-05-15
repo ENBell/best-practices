@@ -15,23 +15,26 @@ JavaScript Best Practices
 Javascript Rules
 --------------------
 
-####  1. Use camelCase for variables.
+####  1. Use camelCase for variables. '$' for jQuery object variables
 
 *Bad Practice*
 ```javascript
 	var random_variable,
 		random_Variable_Two;
+
 ```
 
 *Good Practice*
 ```javascript
 	var randomVariable,
-		randomVariable2;
+		randomVariableTwo,
+		$adView = $('div.ad-view'),
+		adViewValue = $adViewWrapper.val(); // no longer a jQuery object
 ```
 
 > Industry standard
 
-#### 2. All boolean variables should start with 'is'
+#### 2. Boolean variables and functions that return boolean valuse should start with 'is'
 
 *Bad Practice*
 ```javascript
@@ -43,34 +46,73 @@ Javascript Rules
 	var isValid = true;
 ```
 
+#### 4. Write documentation at the top of all JS files.
 
- #### 3. Place constants or time variables (animation durations, etc.) at the top of the file.
+*Include*
 
-*Good Practice*
-```javascript
-	var isValid = true;
+1. General Information about the file
+2. Dependencies
+3. Noteworthy items
+4. Cookies
+
+```html
+/*
+  Used to validate all Vivint forms. 
+
+  See the Vivint form documentation for additional information on how Vivint forms are used.
+
+  vivintFormManager is the namespace for all other variables and functions 
+  vivintFormManager calls initialize() to start the process.
+
+  Dependecies:
+  jQuery
+  jQuery.validator  -> http://jqueryvalidation.org
+  jQuery.placeholder  -> https://github.com/mathiasbynens/jquery-placeholder
+  jQuery.cookie  -> http://plugins.jquery.com/cookie/
+  Campaigns.js -> window.dataLayer 
+
+  Cookies:
+  faaspre_id
+  faas
+  foid
+  exid
+
+  Last Updated: April 2014
+*/
 ```
 
-#### 4. Never have more than one global variable.
 
-#### 5. Use white-space and line breaks as follows:
+#### 3. Avoid writing global variables.
+
+> If you need to write global variables document it really really well.
+
+#### 6. Write functional javascript
+
+> Functions should be specialized.
 
 *Bad Practice*
 ```javascript
-	for(var i=0,j=arr.length;i<j;i++){
-		// Do something.
-	}
-	for(var i=0,j=arr.length;i<j;i++)
-	{
-		// Do something
-	}
+	if (condition) {
+		// setup listeners
+		...
+		// Check for conditions
+		...
+		// More Stuff
+	}	
 ```
 
 *Good Practice*
 ```javascript
-	for (var i = 0, j = arr.length; i < j; i++) {
-		// Do something.
+	function setupListeners () {
+		// DOM manipulation
+		...
+	}
+	function isValid () {
+		// validation
+		...
+	}
+	function moreStuff () {
+		// More Stuff
+		...
 	}
 ```
-
-6. Strive to create generalized functions that take parameters and return values. 
