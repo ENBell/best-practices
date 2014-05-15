@@ -1,13 +1,16 @@
-DMP Forms Documentation
+DMP Form Documentation
 ==================
 
 ###  What to expect from this document
   This document will show you how to create, edit and navigate the complexities of the forms we use at Vivint. This includes html, css, javascript, backend, analytics, and how the forms are used in the company.
 
-### Index
+#### Index
+0. Getting Started
+1.1 Form Submission Process
+1.2 Form Naming Convention
 1. HTML/DMP
-	1.1 Form View Naming Conventions
-	1.2 HTML Forms
+1.1 Form View Naming Conventions
+1.2 HTML Forms
 2. CSS
 3. JavaScript
 4. Backend
@@ -15,49 +18,57 @@ DMP Forms Documentation
 6. Company
 
 * * *
-#### 1. HTML
-##### 1.1 Form View Naming Conventions
-
-FormBase: \[Custom Name\]
-FormBase: \[Custom Name\]\[Modification\]
-FormWrap: \[Custom Name\]
-FormMsg: \[Custom Name\]
-\[Department\]:FormBase: \[Custom Name\]
-\[Department\]:FormWrap: \[Custom Name\]
-
-
-Examples:
-FormBase: Primary Sales
-FormBase: Primary Sales - 3 Form Test
-FormWrap: Holiday Form
-FormMsg: 
-Solar:FormBase: Primary
-Wireless:FormWrap: Special Offer
-
-> If you embed a form view ({{view id=embed v_id=97}}) you are creating a wrapper
-> If you have the form html (<form class="subtle_form {{form_class}}" action="..." ...>) then you are creating a FormBase or a Modification of a Form Base. 
-
-3 Ideas for Naming:
-1. Time Sensative Forms Need Expirations -> (Exp. Nov 2014)
-2. 
-3. 
-
-##### 1.2 HTML Forms
-
-*Form Actions*
-1. action="/form/capture"
-2. action="https://s2984.t.eloqua.com/e/f2"
+#### 1. Getting Started
+##### 1.2 Form View Naming Conventions
 
 -----
 Submission Process:
 
-Forms are submitted and saved to a database. Forms with truthy field values, *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. Various forms are being send directly to Eloqua.
+Forms are submitted and saved to a database. Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. And various forms are being sent directly to Eloqua.
 
-SalesForce is 
+SalesForce is used as our main CMS.
 SalesForce can send data to Eloqua.
 
 Eloqua is used for nuture marketing 
 -----
+
+*Form Actions*
+1. action="/form/capture" *Main Action*
+2. action="https://s2984.t.eloqua.com/e/f2"
+3. 
+
+##### 1.2 Form View Naming Conventions
+
+- FormBase: \[Custom Name\]
+> FormBase: Primary Sales
+
+- FormBase: \[Custom Name\]\[Modification\]
+> FormBase: Primary Sales - 3 Form Test
+
+- FormWrap: \[Custom Name\]
+> FormWrap: Holiday Form
+
+- FormMsg: \[Custom Name\]
+> FormMsg: 
+
+- \[Department\]:FormBase: \[Custom Name\]
+> Solar:FormBase: Primary
+
+- \[Department\]:FormWrap: \[Custom Name\]
+> Wireless:FormWrap: Special Offer
+
+1. If you have the form html (<form class="subtle_form {{form_class}}" action="..." ...>) then you are creating a FormBase or a Modification of a Form Base. 
+2. If you embed a form view ({{view id=embed v_id=97}}) you are creating a wrapper
+3. If you don't embed or use a <form> tag you are creating a FormMsg
+
+Ideas for Naming:
+1. Time Sensative Forms Need Expirations -> "FormWrap: BlackFriday (Exp. Dec2014)"
+2. 
+3. 
+#### 1. HTML
+
+##### 1.2 HTML Forms
+
 
 ### Contact Forms
 Use the following div wrapper:
