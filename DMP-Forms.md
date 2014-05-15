@@ -149,16 +149,16 @@ When customizing forms add the custom class name to the \<form\> tag.
 
 *Example*
 
-`html
+```html
 <form action="/form/capture" method="post" class="subtle_form custom-class-name">
     <input type="text" class="i_text faasub_name_first" name="FaasSubmission[faasub_name_first]" placeholder="First Name" data-pp-field="pp_fname" title="First Name" required=""> 
     <input type="submit" class="i_submit" name="Submit" value="Request Quote" data-eventcategory="form" data-eventaction="click" data-eventlabel="form-submit">
     <input type="hidden" class="faasub_send_to_sfdc" name="FaasSubmission[faasub_send_to_sfdc]" value="1">
  </form>
-`
+```
 
 
-`html
+```html
 form.custom-class-name {
 	...
 }
@@ -168,12 +168,9 @@ form.custom-class-name {
 .custom-class-name input[type="submit"]{
 	...
 }
-`
+```
 
-
-
-
-Various CSS classes used in forms:
+Various CSS classes used in forms (mainly older forms using subtle_forms.js):
 
 - subtle_form_result -> Used in the main div wrapper
 - subtle_form_message -> Used for all form messages
