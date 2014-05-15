@@ -158,7 +158,7 @@ When customizing forms add the custom class name to the \<form\> tag.
 `
 
 
-`css
+`html
 form.custom-class-name {
 	...
 }
