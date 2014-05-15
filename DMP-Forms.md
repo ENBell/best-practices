@@ -203,11 +203,11 @@ Various CSS classes used in forms (mainly older forms using subtle_forms.js):
 
 a refactored version of subtle_forms.js, is used to validate and control all form submission.  *vivintFormManager.js* is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
 
-*vivintFormManager.js* is used for all form validation and on all the 2014 pages. 
+*vivintFormManager.js* is used on the 2014 pages. 
 
 Older pages use the *subtle_forms.js* for validation.
 
-Use Vivint standard regex patterns for validation.
+##### 3.1 HTML5 Regex 
   
 > html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
 
