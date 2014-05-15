@@ -157,6 +157,7 @@ When customizing forms add the custom class name to the <form> tag.
  </form>
 `
 
+
 `css
 form.custom-class-name {
 	...
