@@ -6,11 +6,11 @@ DMP Form Documentation
 
 #### Index
 0. [Getting Started][1]
-	0.1 Form Submission Process
-	0.2 Form Naming Convention
+- Form Submission Process
+- Form Naming Convention
 0. [HTML/DMP][2]
-0.1 Form View Naming Conventions
-0.2 HTML Forms
+- Form View Naming Conventions
+- HTML Forms
 0. [CSS][3]
 0. [JavaScript][4]
 0. [Backend][5]
