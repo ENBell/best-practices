@@ -96,10 +96,24 @@ Current data is a 4 or 5 digit number piped with at timestamp
 
 ##### 1.4 Cookies
 
+Cookies are used to track ids, auto populate forms, and show(customer, lead, etc) user specific data on the page.
 
+*Cookie Keys*
 
+0. VVID
+0. atid
+0. exid
+0. faas
+0. faaspre_id
+0. foid
+0. opid
+0. s_cc
+0. s_fid
+0. s_sq
 
-*Data Fields*
+Other Cookie key/value pairs do exists.
+
+##### 1.4 Data Fields
 
 > Taken from the faasSubmission file
 
