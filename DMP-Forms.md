@@ -33,9 +33,8 @@ Eloqua is used for nuture marketing
 *Form Actions*
 
 0. action="/form/capture" *(Main Action)*
-0. action="https://s2984.t.eloqua.com/e/f2"
-0.
-0.
+
+> By default all forms should be submitted to `/form/capture`
 
 ##### 1.2 Form View Naming Conventions
 
@@ -48,8 +47,8 @@ Eloqua is used for nuture marketing
 - FormWrap: \[Custom Name\]
 > EXAMPLE: FormWrap: Holiday Form
 
-- FormMsg: \[Custom Name\]
-> EXAMPLE: FormMsg: Terms and Conditions
+- FormItm: \[Custom Name\]
+> EXAMPLE: FormItm: Terms and Conditions
 
 - \[Department\]:FormBase: \[Custom Name\]
 > EXAMPLE: Solar:FormBase: Primary
@@ -60,14 +59,127 @@ Eloqua is used for nuture marketing
 
 *Rules For Naming*
 
-1. If you have the form html (<form class="subtle_form {{form_class}}" action="..." ...>) then you are creating a FormBase or a Modification of a Form Base. 
-2. If you embed a form view ({{view id=embed v_id=97}}) you are creating a wrapper
-3. If you don't embed or use a <form> tag you are creating a FormMsg
+1. FormBase: If you have the form html (<form class="subtle_form {{form_class}}" action="..." ...>) then you are creating a FormBase or a Modification of a Form Base. 
+2. FormWrap: If you embed a form view ({{view id=embed v_id=97}}) you are creating a wrapper
+3. FormItm:  If you don't embed or use a <form> tag you are creating a FormItm
 
 *Ideas for Naming:*
 
 1. Time Sensative Forms Need Expirations 
 > EXAMPLE: Wireless:FormWrap: BlackFriday (Exp. Dec2014)
+
+##### 1.3 Ids
+
+Data can be separated into two categories:
+
+1. Tracking Ids
+2. Eloqua Ids
+
+*Data Fields Required by SalesForce*
+
+0. EXID => External id - Used to track people brought to vivint site from external campaigns.
+0. RMID => Re-Marketing id - Used to track External id people as we continue to remarket.
+0. FOID => Form id - Used to track each form variation.
+0. OPID => Optimization id - Used for optimization campaigns.
+0. CIID => Content Impact - Used to track people brought to vivint site from content writers, bloggers, etc.
+
+Current data is a 4 or 5 digit number piped with at timestamp
+
+`12345|TimeStamp,23456|TimeStamp, ...`
+
+4 digit numbers are from older campaigns.
+
+*Depreciated*
+
+0. ATID => All Touch ID -> Used as a history collection all all ids. Each id now keeps a history.
+0. SOID => Social ID
+
+##### 1.4 Cookies
+
+
+
+
+*Data Fields*
+
+> Taken from the faasSubmission file
+
+0. 'faaspre_id' => 'FaaS Pre ID',
+0. 'faaspre_faasub_id' => 'FaaS Submission ID',
+0. 'faaspre_id' => 'Lead IP',
+0. 'faaspre_form_action' => 'Form Action',
+0. 'faaspre_email' => 'Email',
+0. 'faaspre_name_first' => 'Name First',
+0. 'faaspre_name_last' => 'Name Last',
+0. 'faaspre_phone' => 'Phone',
+0. 'faaspre_postal' => 'Postal',
+0. 'faaspre_address_street' => 'Address Street',
+0. 'faaspre_address_street2' => 'Address Street2',
+0. 'faaspre_city' => 'City',
+0. 'faaspre_state' => 'State',
+0. 'faaspre_country' => 'Country',
+0. 'faaspre_home_owner' => 'Home Owner',
+0. 'faaspre_source_hear' => 'Source Hear',
+0. 'faaspre_source_exid' => 'Source EXID',
+0. 'faaspre_source_rmid' => 'Source RMID',
+0. 'faaspre_source_opid' => 'Source OPID',
+0. 'faaspre_source_soid' => 'Source SOID',
+0. 'faaspre_source_ciid' => 'Source CIID',
+0. 'faaspre_source_foid' => 'Source FOID',
+0. 'faaspre_source_afid' => 'Source AFID',
+0. 'faaspre_source_atid' => 'Source ATID',
+0. 'faaspre_send_to_elq' => 'Send to Eloqua',
+0. 'faaspre_send_to_sfdc' => 'Send to SFDC',
+0. 'faaspre_elq_efid' => 'Eloqua Form Name',
+0. 'faaspre_elq_esid' => 'Eloqua Site ID',
+0. 'faaspre_elq_ecid' => 'Eloqua Cookie',
+0. 'faaspre_elq_egid' => 'Eloqua GUID',
+0. 'faaspre_elq_ecaid' => 'Eloqua Campaign ID',
+0. 'faaspre_custom_vc_1' => 'Custom Text 1',
+0. 'faaspre_custom_vc_2' => 'Custom Text 2',
+0. 'faaspre_custom_vc_3' => 'Custom Text 3',
+0. 'faaspre_custom_vc_4' => 'Custom Text 4',
+0. 'faaspre_custom_vc_5' => 'Custom Text 5',
+0. 'faaspre_custom_vc_6' => 'Custom Text 6',
+0. 'faaspre_custom_vc_7' => 'Custom Text 7',
+0. 'faaspre_custom_vc_8' => 'Custom Text 8',
+0. 'faaspre_custom_vc_9' => 'Custom Text 9',
+0. 'faaspre_custom_vc_10' => 'Custom Text 10',
+0. 'faaspre_custom_vc_11' => 'Custom Text 11',
+0. 'faaspre_custom_vc_12' => 'Custom Text 12',
+0. 'faaspre_custom_vc_13' => 'Custom Text 13',
+0. 'faaspre_custom_vc_14' => 'Custom Text 14',
+0. 'faaspre_custom_vc_15' => 'Custom Text 15',
+0. 'faaspre_custom_vc_16' => 'Custom Text 16',
+0. 'faaspre_custom_vc_17' => 'Custom Text 17',
+0. 'faaspre_custom_vc_18' => 'Custom Text 18',
+0. 'faaspre_custom_vc_19' => 'Custom Text 19',
+0. 'faaspre_custom_vc_20' => 'Custom Text 20',
+0. 'faaspre_custom_text_1' => 'Custom Textarea 1',
+0. 'faaspre_custom_text_2' => 'Custom Textarea 2',
+0. 'faaspre_custom_text_3' => 'Custom Textarea 3',
+0. 'faaspre_custom_text_4' => 'Custom Textarea 4',
+0. 'faaspre_custom_text_5' => 'Custom Textarea 5',
+0. 'faaspre_custom_text_6' => 'Custom Textarea 6',
+0. 'faaspre_custom_text_7' => 'Custom Textarea 7',
+0. 'faaspre_custom_text_8' => 'Custom Textarea 8',
+0. 'faaspre_custom_text_9' => 'Custom Textarea 9',
+0. 'faaspre_custom_text_10' => 'Custom Textarea 10',
+0. 'faaspre_custom_text_11' => 'Custom Textarea 11',
+0. 'faaspre_custom_text_12' => 'Custom Textarea 12',
+0. 'faaspre_custom_text_13' => 'Custom Textarea 13',
+0. 'faaspre_custom_text_14' => 'Custom Textarea 14',
+0. 'faaspre_custom_text_15' => 'Custom Textarea 15',
+0. 'faaspre_custom_text_16' => 'Custom Textarea 16',
+0. 'faaspre_custom_text_17' => 'Custom Textarea 17',
+0. 'faaspre_custom_text_18' => 'Custom Textarea 18',
+0. 'faaspre_custom_text_19' => 'Custom Textarea 19',
+0. 'faaspre_custom_text_20' => 'Custom Textarea 20',
+0. 'faaspre_date_created' => 'Date Created',
+0. 'faaspre_date_modified' => 'Date Modified',
+0. 'faaspre_user_created' => 'User Created',
+0. 'faaspre_user_modified' => 'User Modified',
+
+
 
 * * *
 #### 2. HTML
@@ -94,7 +206,7 @@ Refer to vivintFormManager for all validation requirements.
 
 The following input fields are required:
 
-0. FaasSubmission[faasub_name_full]
+0. FaasSubmission[faasub_name_0full]
 1. FaasSubmission[faasub_name_first]
 2. FaasSubmission[faasub_name_last]
 3. FaasSubmission[faasub_phone]
@@ -119,6 +231,15 @@ A few *Hidden Field* used in Eloqua:
 9. FaasSubmission[faasub_elq_egid]
 10. FaasSubmission[faasub_form_action]
 
+*Acronyms Defined*
+
+1. EXID -> External (Paid) Id
+1. ATID -> All Touch Id
+1. RMID -> Re-Marketing (already Paid)
+1. FOID ->
+1. SOID ->
+1. OPID -> 
+
 > Don't use inline JavaScript to submit forms 
 *Example*
 `html
@@ -140,6 +261,16 @@ foid ->
 sfdc ->
 elq ->
 button -> 
+
+##### 2.4 HTML5 Regex 
+  
+> html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
+
+`<input type="tel" pattern="[\d|\.|\s|\-|\+|\(|\)]{10,18}"`
+
+> html5 postal Regex = [\d|\s|\-\w]{5,14}
+
+`<input type="text" class="fassub_postal" pattern="[\d|\s|\-\w]{5,14}"
 
 * * *
 ####  3. CSS
@@ -199,23 +330,17 @@ Various CSS classes used in forms (mainly older forms using subtle_forms.js):
 ####  3. JavaScript
 ----
 
-*vivintFormManager.js* 
+###### vivintFormManager.js
 
-a refactored version of subtle_forms.js, is used to validate and control all form submission.  *vivintFormManager.js* is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns.
+a refactored version of subtle_forms.js, is used to validate and control all form submission.  *vivintFormManager.js* is used to pre-populate fields, run validation, show error messages and submit the form. It uses the same regexs as the HTML5 patterns. *vivintFormManager.js* is used on the 2014 pages. Older pages use the *subtle_forms.js* for validation.
 
-*vivintFormManager.js* is used on the 2014 pages. 
+###### campaigns.js
 
-Older pages use the *subtle_forms.js* for validation.
 
-##### 3.1 HTML5 Regex 
-  
-> html5 Phone  RegEx = [\d|\.|\s|\-|\+|\(|\)]{10,18}
 
-`<input type="tel" pattern="[\d|\.|\s|\-|\+|\(|\)]{10,18}"`
 
-> html5 postal Regex = [\d|\s|\-\w]{5,14}
 
-`<input type="text" class="fassub_postal" pattern="[\d|\s|\-\w]{5,14}"`
+
 
 * * *
 ####  4. Analytics
@@ -223,7 +348,7 @@ Older pages use the *subtle_forms.js* for validation.
 
 *Forms*
 
-1. SaleForce - 
+1. SaleForce - Main system used to store & work with leads & customers.
 2. Eloqua - Used for nurturing and remarketing ("Faas" prefix is used for Eloqua)
 
 *Page*
@@ -231,4 +356,5 @@ Older pages use the *subtle_forms.js* for validation.
 1. Google Analytics - 
 2. Site Catalyst - 
 3. Optimizely - Used for test data and conversion rates
+4. Test & Target - 
 
