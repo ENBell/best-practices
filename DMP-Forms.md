@@ -118,6 +118,23 @@ Cookies are used to track ids, auto populate forms, and show user(customer, lead
 
 > Other Cookie key/value pairs do exists.
 
+###### campaigns.js
+
+Defines the following globalDefaultCodes:
+
+```js
+var globalDefaultCodes = {
+  'exid': {'direct': '28381', 'referral': '28386', 'cookieDays': 90},
+  'afid': {'cookieDays': 90},
+  'rmid': {'cookieDays': 30},
+  'ciid': {'cookieDays': 14},
+  'soid': {'cookieDays': 365},
+  'opid': {'cookieDays': 0},
+  'vendor_id': {'cookieDays': 90},
+  'subid': {'cookieDays': 90}
+  };
+```
+
 ##### 1.5 Data Fields
 
 > Taken from the faasSubmission file. Faas == "Forms as a Service"
