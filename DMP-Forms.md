@@ -1,4 +1,4 @@
-DMP Form Documentation
+DMP Form, Cookie, Tracking Documentation
 ==================
 
 ###  What to expect from this document
@@ -9,6 +9,9 @@ DMP Form Documentation
 0. Getting Started
   * Form Submission Process
   * Form Naming Convention
+  * Ids
+  * Cookies
+  * Data Fields
 0. HTML
   * Form View Naming Conventions
   * HTML Forms
@@ -23,12 +26,13 @@ DMP Form Documentation
 
 ##### 1.2 Form Submission Process
 
-Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively. Various forms are being sent directly to Eloqua.
+Forms are submitted and saved to a database (action='/form/capture'). Forms with the truthy field values *faasub_send_to_sfdc* or *faasub_send_to_elq* are submitted to SalesForce or Eloqua, respectively.
 
 SalesForce is used as our main CMS.
-SalesForce can send data to Eloqua.
+SalesForce sends data to Eloqua & Optimizely. 
 
-Eloqua is used for nuture marketing 
+Eloqua is used for nuture marketing.
+Optimizely is used for onpage testing and optimization. 
 
 *Form Actions*
 
@@ -66,6 +70,7 @@ Eloqua is used for nuture marketing
 *Ideas for Naming:*
 
 1. Time Sensative Forms Need Expirations 
+
 > EXAMPLE: Wireless:FormWrap: BlackFriday (Exp. Dec2014)
 
 ##### 1.3 Ids
@@ -83,20 +88,20 @@ Data can be separated into two categories:
 0. OPID => Optimization id - Used for optimization campaigns.
 0. CIID => Content Impact - Used to track people brought to vivint site from content writers, bloggers, etc.
 
-Current data is a 4 or 5 digit number piped with at timestamp
+Current data is a 4 or 5 digit number piped with at timestamp. Comma separated digit|timestamp pairs may be concatenated.
 
-`12345|TimeStamp,23456|TimeStamp, ...`
+*Example* `12345|TimeStamp,23456|TimeStamp, ...`
 
-4 digit numbers are from older campaigns.
+> 4 digit numbers are from older campaigns.
 
 *Depreciated*
 
 0. ATID => All Touch ID -> Used as a history collection all all ids. Each id now keeps a history.
-0. SOID => Social ID
+0. SOID => Social ID -> Used to track social campaigns.
 
 ##### 1.4 Cookies
 
-Cookies are used to track ids, auto populate forms, and show(customer, lead, etc) user specific data on the page.
+Cookies are used to track ids, auto populate forms, and show user(customer, lead, etc) specific data on the page.
 
 *Cookie Keys*
 
@@ -111,11 +116,11 @@ Cookies are used to track ids, auto populate forms, and show(customer, lead, etc
 0. s_fid
 0. s_sq
 
-Other Cookie key/value pairs do exists.
+> Other Cookie key/value pairs do exists.
 
-##### 1.4 Data Fields
+##### 1.5 Data Fields
 
-> Taken from the faasSubmission file
+> Taken from the faasSubmission file. Faas == "Forms as a Service"
 
 0. 'faaspre_id' => 'FaaS Pre ID',
 0. 'faaspre_faasub_id' => 'FaaS Submission ID',
@@ -151,48 +156,12 @@ Other Cookie key/value pairs do exists.
 0. 'faaspre_custom_vc_1' => 'Custom Text 1',
 0. 'faaspre_custom_vc_2' => 'Custom Text 2',
 0. 'faaspre_custom_vc_3' => 'Custom Text 3',
-0. 'faaspre_custom_vc_4' => 'Custom Text 4',
-0. 'faaspre_custom_vc_5' => 'Custom Text 5',
-0. 'faaspre_custom_vc_6' => 'Custom Text 6',
-0. 'faaspre_custom_vc_7' => 'Custom Text 7',
-0. 'faaspre_custom_vc_8' => 'Custom Text 8',
-0. 'faaspre_custom_vc_9' => 'Custom Text 9',
-0. 'faaspre_custom_vc_10' => 'Custom Text 10',
-0. 'faaspre_custom_vc_11' => 'Custom Text 11',
-0. 'faaspre_custom_vc_12' => 'Custom Text 12',
-0. 'faaspre_custom_vc_13' => 'Custom Text 13',
-0. 'faaspre_custom_vc_14' => 'Custom Text 14',
-0. 'faaspre_custom_vc_15' => 'Custom Text 15',
-0. 'faaspre_custom_vc_16' => 'Custom Text 16',
-0. 'faaspre_custom_vc_17' => 'Custom Text 17',
-0. 'faaspre_custom_vc_18' => 'Custom Text 18',
-0. 'faaspre_custom_vc_19' => 'Custom Text 19',
-0. 'faaspre_custom_vc_20' => 'Custom Text 20',
-0. 'faaspre_custom_text_1' => 'Custom Textarea 1',
-0. 'faaspre_custom_text_2' => 'Custom Textarea 2',
-0. 'faaspre_custom_text_3' => 'Custom Textarea 3',
-0. 'faaspre_custom_text_4' => 'Custom Textarea 4',
-0. 'faaspre_custom_text_5' => 'Custom Textarea 5',
-0. 'faaspre_custom_text_6' => 'Custom Textarea 6',
-0. 'faaspre_custom_text_7' => 'Custom Textarea 7',
-0. 'faaspre_custom_text_8' => 'Custom Textarea 8',
-0. 'faaspre_custom_text_9' => 'Custom Textarea 9',
-0. 'faaspre_custom_text_10' => 'Custom Textarea 10',
-0. 'faaspre_custom_text_11' => 'Custom Textarea 11',
-0. 'faaspre_custom_text_12' => 'Custom Textarea 12',
-0. 'faaspre_custom_text_13' => 'Custom Textarea 13',
-0. 'faaspre_custom_text_14' => 'Custom Textarea 14',
-0. 'faaspre_custom_text_15' => 'Custom Textarea 15',
-0. 'faaspre_custom_text_16' => 'Custom Textarea 16',
-0. 'faaspre_custom_text_17' => 'Custom Textarea 17',
-0. 'faaspre_custom_text_18' => 'Custom Textarea 18',
-0. 'faaspre_custom_text_19' => 'Custom Textarea 19',
+...
 0. 'faaspre_custom_text_20' => 'Custom Textarea 20',
 0. 'faaspre_date_created' => 'Date Created',
 0. 'faaspre_date_modified' => 'Date Modified',
 0. 'faaspre_user_created' => 'User Created',
 0. 'faaspre_user_modified' => 'User Modified',
-
 
 
 * * *
@@ -208,6 +177,14 @@ Every form needs to have form validation. Forms are validated two ways:
 
 >  Additional validation should NOT be necessary.
 
+> Don't use inline JavaScript to submit forms.
+
+*Example: Bad Form*
+
+`html
+<a href="javascript:{}" class="button " onclick="document.getElementById('form38').submit();">Submit</a>
+`
+
 *Invalid Field Messages*
 
 0.  HTML5 Validation will display messages. Search "HTML5 validation" if you don't know how to use them.
@@ -220,7 +197,7 @@ Refer to vivintFormManager for all validation requirements.
 
 The following input fields are required:
 
-0. FaasSubmission[faasub_name_0full]
+0. FaasSubmission[faasub_name_full] *or first and last name*
 1. FaasSubmission[faasub_name_first]
 2. FaasSubmission[faasub_name_last]
 3. FaasSubmission[faasub_phone]
@@ -230,51 +207,12 @@ The following input fields are required:
 5. FaasSubmission[faasub_email] or email
   * Regex is used to determine if valid address
 
-> Faas == "Forms as a Service"
-
-A few *Hidden Field* used in Eloqua:
-
-1. FaasSubmission[faasub_send_to_sfdc]
-2. FaasSubmission[faasub_send_to_elq]
-3. FaasSubmission[faasub_thank_you_url]
-4. FaasSubmission[faasub_source_foid]
-5. FaasSubmission[faasub_elq_efid]
-6. FaasSubmission[faasub_elq_esid]
-7. FaasSubmission[faasub_elq_ecid]
-8. FaasSubmission[faasub_elq_ecaid]
-9. FaasSubmission[faasub_elq_egid]
-10. FaasSubmission[faasub_form_action]
-
-*Acronyms Defined*
-
-1. EXID -> External (Paid) Id
-1. ATID -> All Touch Id
-1. RMID -> Re-Marketing (already Paid)
-1. FOID ->
-1. SOID ->
-1. OPID -> 
-
-> Don't use inline JavaScript to submit forms 
-*Example*
-`html
-<a href="javascript:{}" class="button " onclick="document.getElementById('form38').submit();">Submit</a>
-`
 
 ##### 2.3 DMP
 
 The following form is the primary form in DMP:
 
 > v_id 97 FORM: Primary Sales
-
-###### Embedding forms in DMP
-
-ty_path ->
-layout ->
-action -> 
-foid -> 
-sfdc ->
-elq ->
-button -> 
 
 ##### 2.4 HTML5 Regex 
   
@@ -284,26 +222,29 @@ button ->
 
 > html5 postal Regex = [\d|\s|\-\w]{5,14}
 
-`<input type="text" class="fassub_postal" pattern="[\d|\s|\-\w]{5,14}"
+`<input type="text" class="fassub_postal" pattern="[\d|\s|\-\w]{5,14}"`
 
 * * *
 ####  3. CSS
 ----
 
-When customizing forms add the custom class name to the \<form\> tag.
+When customizing forms add the custom class name to the form tag: `<form class="custom-name">` .
 
-*Example*
+###### Example
 
-HTML
+*HTML*
+
 ```html
-<form action="/form/capture" method="post" class="subtle_form custom-class-name">
-    <input type="text" class="i_text faasub_name_first" name="FaasSubmission[faasub_name_first]" placeholder="First Name" data-pp-field="pp_fname" title="First Name" required=""> 
+<form action="/form/capture" method="post" class="custom-class-name">
+    <input type="text" class="i_text faasub_name_first" name="FaasSubmission[faasub_name_first]" placeholder="First Name" data-pp-field="pp_fname" title="First Name" required="">
+    ... 
     <input type="submit" class="i_submit" name="Submit" value="Request Quote" data-eventcategory="form" data-eventaction="click" data-eventlabel="form-submit">
     <input type="hidden" class="faasub_send_to_sfdc" name="FaasSubmission[faasub_send_to_sfdc]" value="1">
  </form>
 ```
 
-CSS
+*CSS*
+
 ```html
 form.custom-class-name {
 	...
@@ -350,11 +291,7 @@ a refactored version of subtle_forms.js, is used to validate and control all for
 
 ###### campaigns.js
 
-
-
-
-
-
+defines dataLayer global variable. Defines global default cookies, sets domain codes all items used for campaign tracking.
 
 * * *
 ####  4. Analytics
