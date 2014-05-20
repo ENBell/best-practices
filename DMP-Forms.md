@@ -103,21 +103,6 @@ Current data is a 4 or 5 digit number piped with at timestamp. Comma separated d
 
 Cookies are used to track ids, auto populate forms, and show user(customer, lead, etc) specific data on the page.
 
-*Cookie Keys*
-
-0. VVID
-0. atid
-0. exid
-0. faas
-0. faaspre_id
-0. foid
-0. opid
-0. s_cc
-0. s_fid
-0. s_sq
-
-> Other Cookie key/value pairs do exists.
-
 ###### campaigns.js
 
 Defines the following globalDefaultCodes:
@@ -173,7 +158,9 @@ var globalDefaultCodes = {
 0. 'faaspre_custom_vc_1' => 'Custom Text 1',
 0. 'faaspre_custom_vc_2' => 'Custom Text 2',
 0. 'faaspre_custom_vc_3' => 'Custom Text 3',
+
 ...
+
 0. 'faaspre_custom_text_20' => 'Custom Textarea 20',
 0. 'faaspre_date_created' => 'Date Created',
 0. 'faaspre_date_modified' => 'Date Modified',
